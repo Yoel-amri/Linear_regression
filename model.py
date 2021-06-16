@@ -60,9 +60,10 @@ def main():
     priceMean = calc_mean(price)
     aVar = calc_aVar(km, price, kmMean, priceMean)
     bVar = calc_bVar(km, price, aVar)
+    f = open("abVariables", "w");
+    f.write(str(aVar)+","+str(bVar));
     data = generateData(km, price, aVar, bVar)
     draw(km, price, data)
-
 
 if __name__ == "__main__":
     main()
